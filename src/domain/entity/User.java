@@ -2,7 +2,7 @@ package domain.entity;
 
 import java.time.LocalDateTime;
 
-public class UserEntity {
+public class User {
     private int user = 0; // 참여할 수 있는 유저
     private int id; // 유저의 고유 아이디
     private int name; // 유저 이름
@@ -11,7 +11,7 @@ public class UserEntity {
     private int account; // 게임 후 잔액
     private LocalDateTime createdAt; // 유저 생성 날짜
 
-    public UserEntity(int user, int id, int name, int nickname, int money, int account, LocalDateTime createdAt) {
+    public User(int user, int id, int name, int nickname, int money, int account, LocalDateTime createdAt) {
         this.user = user;
         this.id = id;
         this.name = name;
