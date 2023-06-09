@@ -2,7 +2,7 @@
 name: "\U0001F4BB Feature"
 about: 작업 사항을 입력해주세요!
 title: "\U0001F4BB [FEATURE] TItle"
-labels: "\U0001FAB0 bug, \U0001F4BB feature"
+labels: "\U0001F41B bug, \U0001F4BB feature"
 assignees: ''
 
 ---

@@ -1,8 +1,8 @@
 ---
-name: "\U0001FAB0 Bug"
+name: "\U0001F41B Bug"
 about: 버그 내용 및 수정사항을 입력해주세요!
-title: "\U0001FAB0 [BUG] Title"
-labels: "\U0001FAB0 bug"
+title: "\U0001F41B [BUG] Title"
+labels: "\U0001F41B bug"
 assignees: ''
 
 ---
