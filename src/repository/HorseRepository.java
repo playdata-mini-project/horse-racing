@@ -6,10 +6,10 @@ import java.sql.*;
 public class HorseRepository {
     public void insertHorse(String horseName) {
         Connection connection = new JdbcConnection().getJdbc();
-        String registerSql =  "insert into horse(name) value(?)";
+        String insertSql =  "insert into horse(name) value(?)";
         try {
-            PreparedStatement psmt = connection.prepareStatement(registerSql);
-            psmt.setString(1,horseName);
+            PreparedStatement psmt = connection.prepareStatement(insertSql);
+            psmt.setString(1, horseName);
             if(psmt.executeUpdate()==0){
                 System.out.println("insertHorse err");
             }
@@ -19,7 +19,6 @@ public class HorseRepository {
         try {
             connection.close();
         } catch (SQLException e) {
-            // throw(RuntimeException) 에러발생시 프로그램 종료
             System.out.println("connection 닫기 실패");
         }
     }
