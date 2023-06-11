@@ -10,8 +10,7 @@ public class GameService {
    public void betting(BettingDto dto){
         new GameRepository().betting(dto);
     }
-//    public void gameStart(String name, int money){
-//
-//        new GameRepository().updateMoney(name,money);
-//    }
+    public void gameStart(){
+    new StartGame().startGame();
+    }
 }

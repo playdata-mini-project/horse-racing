@@ -57,4 +57,3 @@ public class GameRepository {
             System.out.println("connection 닫기 실패");
         }
     }
-}

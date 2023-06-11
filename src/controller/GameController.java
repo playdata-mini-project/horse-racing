@@ -22,7 +22,7 @@ public class GameController {
                     betting();
                     break;
                 case "3":
-                    //gameStart();
+                    gameStart();
                     break;
                 case "4":
                    Back.back();
@@ -41,8 +41,8 @@ private void betting(){
     BettingDto dto = new BettingDto(bettingInfo[0],bettingInfo[1],Integer.parseInt(bettingInfo[2]));
     gameService.betting(dto);
 }
-//private void gameStart(){
-//
-//}
+private void gameStart(){
+gameService.gameStart();
+}
 }
 
