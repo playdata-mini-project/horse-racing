@@ -10,9 +10,10 @@ public class JdbcConnection {
                         "?serverTimezone=Asia/Seoul&characterEncoding=UTF-8";
 
     private static final String user = "horseracing";
+
     private static final String password = "horseracing";
 
-    public static Connection getConn() {
+    public static Connection getConnection() {
         Connection conn;
 
         try {
