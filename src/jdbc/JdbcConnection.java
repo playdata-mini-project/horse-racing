@@ -1,4 +1,4 @@
-package util;
+package util.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,14 +6,14 @@ import java.sql.SQLException;
 
 public class JdbcConnection {
 
-    // 로컬 사용일 경우 user, password, url ip 주소만 변경
-    private final String url = "jdbc:mysql://192.168.0.203:3306/kiosk"+
+    // 로컬 사용일 경우 user, password, url ip 주소
+    private static final String url = "jdbc:mysql://192.168.0.203:3306/kiosk"+
                         "?serverTimezone=Asia/Seoul&characterEncoding=UTF-8";
 
-    private final String user = "horseracing";
-    private final String password = "horseracing";
+    private static final String user = "horseracing";
+    private static final String password = "horseracing";
 
-    public Connection getConn() {
+    public static Connection getConn() {
         Connection conn;
 
         try {
