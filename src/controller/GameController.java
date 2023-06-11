@@ -1,12 +1,12 @@
 package controller;
 
 import util.Back;
-
 import java.util.Scanner;
+import service.GameService;
 
 public class GameController {
     private Scanner sc;
-    //private static GameService = new GameService();
+    private static GameService gameService = new GameService();
 
     public void GameView(){
         while (true) {
@@ -15,7 +15,7 @@ public class GameController {
             String mode = sc.nextLine();
             switch (mode) {
                 case "1":
-                    //findGameHorse();
+                    findGameHorse();
                     break;
                 case "2":
                     //betting();
@@ -28,14 +28,16 @@ public class GameController {
             }
         }
     }
-    }
-//    private void findGameHorse(){
-//
-//}
+
+private void findGameHorse(){
+    gameService.findGameHorse();
+
+}
 //private void betting(){
 //
 //}
 //private void gameStart(){
 //
 //}
+}
 
