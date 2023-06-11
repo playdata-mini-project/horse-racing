@@ -21,6 +21,9 @@ public class HorseController {
                 case "3":
                     deleteHorse();
                     break;
+                case "4":
+                    HomeController homeController = new HomeController();
+                    homeController.homeView();
             }
         }
     }
@@ -38,4 +41,5 @@ public class HorseController {
         String horseName = sc.nextLine();
         horseService.deleteHorse(horseName);
     }
+
 }
