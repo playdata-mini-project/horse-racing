@@ -1,4 +1,4 @@
-package util.jdbc;
+package jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,8 +6,7 @@ import java.sql.SQLException;
 
 public class JdbcConnection {
 
-    // 로컬 사용일 경우 user, password, url ip 주소
-    private static final String url = "jdbc:mysql://192.168.0.203:3306/kiosk"+
+    private static final String url = "jdbc:mysql://localhost:3306/horse_racing"+
                         "?serverTimezone=Asia/Seoul&characterEncoding=UTF-8";
 
     private static final String user = "horseracing";
