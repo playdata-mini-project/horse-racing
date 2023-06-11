@@ -68,26 +68,3 @@ public class GameRepository {
         }
     }
 }
-//public class JoinHorse {
-//    public Horse selectHorse(String horseId) {
-//        try {
-//            Class.forName(driver);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        String sql = "select * from horse where horse_id ='" + horseId + "'";
-//        try (Connection conn = DriverManager.getConnection(url, user, password);
-//             Statement stmt = conn.createStatement();
-//             ResultSet rs = stmt.executeQuery(sql);
-//        ) {
-//            while (rs.next()) {
-//                int horse_id = rs.getInt("horse_id");
-//                int horse_injury = rs.getInt("horse_injury");
-//                return new Horse(horse_id, horse_injury;
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-//}
