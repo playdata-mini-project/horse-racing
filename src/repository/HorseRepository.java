@@ -23,12 +23,12 @@ public class HorseRepository {
         }
     }
     public void findAllHorse(){
-        FindAllHorseDto dto;
         Connection connection = new JdbcConnection().getJdbc();
         String findAllSql =  "select * from horse";
-         Integer id = null;
-         String name = null;
-         Integer average_rank = null;
+         Integer id ;
+         String name ;
+         Integer average_rank;
+         Integer injury;
 
         try {
             PreparedStatement psmt = connection.prepareStatement(findAllSql);
@@ -37,8 +37,8 @@ public class HorseRepository {
                 id = resultSet.getInt("id");
                 name = resultSet.getString("name");
                 average_rank = resultSet.getInt("average_rank");
-                dto = new FindAllHorseDto(id,name,average_rank);
-                System.out.println(id + " " + name + " " + average_rank);
+                injury = resultSet.getInt("injury");
+                System.out.println(id + " " + name + " " + average_rank + " " + injury);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -46,7 +46,6 @@ public class HorseRepository {
         try {
             connection.close();
         } catch (SQLException e) {
-            // throw(RuntimeException) 에러발생시 프로그램 종료
             System.out.println("connection 닫기 실패");
         }
     }
@@ -65,7 +64,6 @@ public class HorseRepository {
         try {
             connection.close();
         } catch (SQLException e) {
-            // throw(RuntimeException) 에러발생시 프로그램 종료
             System.out.println("connection 닫기 실패");
         }
     }
