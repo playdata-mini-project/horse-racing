@@ -8,11 +8,10 @@ public class Horse {
     private int average_rank;
     private float injury;
     private LocalDateTime created_at;
-
+// cont 유저랑 /repo db랑
     public Horse(){
 
     }
-
     public Horse(int id, String name, int average_rank, float injury, LocalDateTime created_at) {
         this.id = id;
         this.name = name;

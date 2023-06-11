@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 .idea
 *.iml
-
+horse-racing/src/config
 ### Eclipse ###
 .apt_generated
 .classpath
