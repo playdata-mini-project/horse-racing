@@ -1,11 +1,11 @@
 package domain.dto;
 
-public class insertUserDto {
+public class InsertUserDto {
     private String name;
     private String nickname;
     private int money;
 
-    public insertUserDto(String name, String nickname, int money) {
+    public InsertUserDto(String name, String nickname, int money) {
         this.name = name;
         this.nickname = nickname;
         this.money = money;

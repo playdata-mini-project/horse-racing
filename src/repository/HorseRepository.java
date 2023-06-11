@@ -1,6 +1,6 @@
 package repository;
 import config.JdbcConnection;
-import domain.dto.findAllHorseDto;
+import domain.dto.FindAllHorseDto;
 
 import java.sql.*;
 public class HorseRepository {
@@ -23,7 +23,7 @@ public class HorseRepository {
         }
     }
     public void findAllHorse(){
-        findAllHorseDto dto;
+        FindAllHorseDto dto;
         Connection connection = new JdbcConnection().getJdbc();
         String findAllSql =  "select * from horse";
          Integer id = null;
@@ -37,7 +37,7 @@ public class HorseRepository {
                 id = resultSet.getInt("id");
                 name = resultSet.getString("name");
                 average_rank = resultSet.getInt("average_rank");
-                dto = new findAllHorseDto(id,name,average_rank);
+                dto = new FindAllHorseDto(id,name,average_rank);
                 System.out.println(id + " " + name + " " + average_rank);
             }
         } catch (SQLException e) {

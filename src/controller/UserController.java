@@ -1,6 +1,8 @@
 package controller;
 import service.UserService;
-import domain.dto.insertUserDto;
+import domain.dto.InsertUserDto;
+import util.Back;
+
 import java.util.Scanner;
 
 public class UserController {
@@ -22,6 +24,8 @@ public class UserController {
                     updateMoney();
                 case "4":
                     deleteUser();
+                case "5":
+                    Back.back();
             }
         }
     }
@@ -34,7 +38,7 @@ public class UserController {
         String nickname= sc.nextLine();
         System.out.println("시드머니 입력 : ");
         int money = sc.nextInt();
-        insertUserDto dto = new insertUserDto(name,nickname,money);
+        InsertUserDto dto = new InsertUserDto(name,nickname,money);
         UserService.insertUser(dto);
     }
     private void findAllUser() {

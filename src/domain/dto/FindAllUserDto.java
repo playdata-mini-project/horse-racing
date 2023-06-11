@@ -1,16 +1,14 @@
 package domain.dto;
 
-import java.time.LocalDateTime;
-
-public class findAllUserDto {
+public class FindAllUserDto {
     private int id;
     private String name;
     private String nickname;
     private int money;
-    private findAllUserDto(){
+    private FindAllUserDto(){
 
     }
-    public findAllUserDto(int id, String name, String nickname, int money) {
+    public FindAllUserDto(int id, String name, String nickname, int money) {
         this.id = id;
         this.name = name;
         this.nickname = nickname;

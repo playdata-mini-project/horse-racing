@@ -1,16 +1,15 @@
 package repository;
 
 import config.JdbcConnection;
-import domain.dto.findAllUserDto;
-import domain.dto.insertUserDto;
+import domain.dto.FindAllUserDto;
+import domain.dto.InsertUserDto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class UserRepository {
-    public void insertUser(insertUserDto dto) {
+    public void insertUser(InsertUserDto dto) {
         Connection connection = new JdbcConnection().getJdbc();
         String insertSql =  "insert into user(name, nickname, money) value(?,?,?)";
         try {
@@ -31,7 +30,7 @@ public class UserRepository {
         }
     }
     public void findAllUser(){
-        findAllUserDto dto;
+        FindAllUserDto dto;
         Connection connection = new JdbcConnection().getJdbc();
         String findAllUserSql =  "select * from user";
         Integer id = null;
@@ -47,7 +46,7 @@ public class UserRepository {
                 name = resultSet.getString("name");
                 nickname = resultSet.getString("nickname");
                 money = resultSet.getInt("money");
-                dto = new findAllUserDto(id,name,nickname,money);
+                dto = new FindAllUserDto(id,name,nickname,money);
                 System.out.println(id + " " + name + " " + nickname + " " + money);
             }
         } catch (SQLException e) {

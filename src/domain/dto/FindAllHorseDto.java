@@ -1,7 +1,7 @@
 package domain.dto;
 
-public class findAllHorseDto {
-    public findAllHorseDto(int id, String name, int average_rank) {
+public class FindAllHorseDto {
+    public FindAllHorseDto(int id, String name, int average_rank) {
         this.id = id;
         this.name = name;
         this.average_rank = average_rank;

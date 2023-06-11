@@ -1,5 +1,6 @@
 package controller;
 import service.HorseService;
+import util.Back;
 
 import java.util.Scanner;
 public class HorseController {
@@ -22,8 +23,7 @@ public class HorseController {
                     deleteHorse();
                     break;
                 case "4":
-                    HomeController homeController = new HomeController();
-                    homeController.homeView();
+                    Back.back();
             }
         }
     }

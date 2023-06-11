@@ -13,6 +13,9 @@ public class HomeController {
         if(mode.equals("2")){
             new HorseController().HorseView();
         }
+        if(mode.equals("3")){
+            new GameController().GameView();
+        }
 
     }
 }
