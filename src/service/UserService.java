@@ -1,8 +1,8 @@
 package service;
-import domain.dto.insertUserDto;
+import domain.dto.InsertUserDto;
 import repository.UserRepository;
 public class UserService {
-    public static void insertUser(insertUserDto dto){
+    public static void insertUser(InsertUserDto dto){
         new UserRepository().insertUser(dto);
     }public void findAllUser(){
         new UserRepository().findAllUser();
@@ -14,5 +14,4 @@ public class UserService {
     public void deleteUser(String userName){
         new UserRepository().deleteUser(userName);
     }
-
 }
