@@ -8,6 +8,7 @@ public class JdbcConnection {
             + "?serverTimezone=Asia/Seoul&characterEncoding=UTF-8";
     private static final String USER = "root";
     private static final String PASSWORD = "1234";
+
     public static Connection getConnection(){
         Connection conn;
 
