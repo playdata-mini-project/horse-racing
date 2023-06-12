@@ -1,6 +1,6 @@
 package sql;
 
-import jdbc.JdbcConnection;
+import config.jdbc.JdbcConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

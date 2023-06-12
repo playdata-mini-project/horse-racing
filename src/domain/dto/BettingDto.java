@@ -1,9 +1,9 @@
 package domain.dto;
 
 public class BettingDto {
-    private String horseName;
-    private String userName;
-    private int money;
+    private final String horseName;
+    private final String userName;
+    private final int money;
 
     public BettingDto(String horseName, String userName, int money) {
         this.horseName = horseName;

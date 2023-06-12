@@ -1,6 +1,7 @@
 package repository;
 
-import config.JdbcConnection;
+import config.jdbc.JdbcConnection;
+
 import domain.dto.BettingDto;
 
 import java.sql.Connection;
@@ -10,11 +11,11 @@ import java.sql.SQLException;
 
 public class GameRepository {
     public void findGameHorse() {
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String findGameHorseSql = "select * from horse order by rand() limit 10;";
-        Integer id;
+        int id;
         String name;
-        Integer average_rank;
+        int average_rank;
 
         try {
             PreparedStatement psmt = connection.prepareStatement(findGameHorseSql);
@@ -35,8 +36,9 @@ public class GameRepository {
             System.out.println("connection 닫기 실패");
         }
     }
+
     public void betting(BettingDto dto) {
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String bettingSql = "insert into betting where horseName = ? values(?,?)";
         String moneySql = "update user set money = money - ? where name = ?";
         try {
@@ -57,3 +59,4 @@ public class GameRepository {
             System.out.println("connection 닫기 실패");
         }
     }
+}

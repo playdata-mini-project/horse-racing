@@ -5,7 +5,7 @@ import util.Back;
 import java.util.Scanner;
 public class HorseController {
     private Scanner sc;
-    private static HorseService horseService = new HorseService();
+    private static final HorseService horseService = HorseService.getInstance();
 
     public void HorseView() {
         while (true) {

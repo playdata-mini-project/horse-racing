@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UserController {
     private Scanner sc;
-    private static UserService userService = new UserService();
+    private static final UserService userService = UserService.getInstance();
 
     public void UserView() {
         while (true) {
@@ -30,7 +30,6 @@ public class UserController {
         }
     }
 
-
     private void insertUser(){
         System.out.println("이름 입력 : ");
         String name = sc.nextLine();
@@ -41,9 +40,11 @@ public class UserController {
         InsertUserDto dto = new InsertUserDto(name,nickname,money);
         UserService.insertUser(dto);
     }
+
     private void findAllUser() {
         userService.findAllUser();
     }
+
     private void updateMoney(){
         System.out.println("충전 할 유저 이름 입력");
         String userName = sc.nextLine();
@@ -51,6 +52,7 @@ public class UserController {
         int money = sc.nextInt();
         userService.updateMoney(userName,money);
     }
+
     private void deleteUser() {
         System.out.println("삭제할 유저 입력 : ");
         String userName = sc.nextLine();
