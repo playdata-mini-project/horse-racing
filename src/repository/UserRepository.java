@@ -1,6 +1,6 @@
 package repository;
 
-import config.JdbcConnection;
+import config.jdbc.JdbcConnection;
 import domain.dto.FindAllUserDto;
 import domain.dto.InsertUserDto;
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class UserRepository {
     public void insertUser(InsertUserDto dto) {
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String insertSql =  "insert into user(name, nickname, money) value(?,?,?)";
         try {
             PreparedStatement psmt = connection.prepareStatement(insertSql);
@@ -31,12 +31,12 @@ public class UserRepository {
     }
     public void findAllUser(){
         FindAllUserDto dto;
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String findAllUserSql =  "select * from user";
-        Integer id = null;
-        String name = null;
-        String nickname = null;
-        Integer money = null;
+        int id;
+        String name;
+        String nickname;
+        int money;
 
         try {
             PreparedStatement psmt = connection.prepareStatement(findAllUserSql);
@@ -46,7 +46,6 @@ public class UserRepository {
                 name = resultSet.getString("name");
                 nickname = resultSet.getString("nickname");
                 money = resultSet.getInt("money");
-                dto = new FindAllUserDto(id,name,nickname,money);
                 System.out.println(id + " " + name + " " + nickname + " " + money);
             }
         } catch (SQLException e) {
@@ -59,7 +58,7 @@ public class UserRepository {
         }
     }
     public void updateMoney(String userName, int money){
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String updateSql =  "update user set money = money + ? where name = ?";
         try {
             PreparedStatement psmt = connection.prepareStatement(updateSql);
@@ -79,7 +78,7 @@ public class UserRepository {
         }
     }
     public void deleteUser(String userName){
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String deleteSql =  "delete from user where name = ?";
         try {
             PreparedStatement psmt = connection.prepareStatement(deleteSql);

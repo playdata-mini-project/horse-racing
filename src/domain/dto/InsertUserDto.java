@@ -1,9 +1,9 @@
 package domain.dto;
 
 public class InsertUserDto {
-    private String name;
-    private String nickname;
-    private int money;
+    private final String name;
+    private final String nickname;
+    private final int money;
 
     public InsertUserDto(String name, String nickname, int money) {
         this.name = name;

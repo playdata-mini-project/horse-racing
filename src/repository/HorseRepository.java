@@ -1,11 +1,10 @@
 package repository;
-import config.JdbcConnection;
-import domain.dto.FindAllHorseDto;
+import config.jdbc.JdbcConnection;
 
 import java.sql.*;
 public class HorseRepository {
     public void insertHorse(String horseName) {
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String insertSql =  "insert into horse(name) value(?)";
         try {
             PreparedStatement psmt = connection.prepareStatement(insertSql);
@@ -23,12 +22,12 @@ public class HorseRepository {
         }
     }
     public void findAllHorse(){
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String findAllSql =  "select * from horse";
-         Integer id ;
+         int id ;
          String name ;
-         Integer average_rank;
-         Integer injury;
+         int average_rank;
+         int injury;
 
         try {
             PreparedStatement psmt = connection.prepareStatement(findAllSql);
@@ -50,7 +49,7 @@ public class HorseRepository {
         }
     }
     public void deleteHorse(String horseName){
-        Connection connection = new JdbcConnection().getJdbc();
+        Connection connection = new JdbcConnection().getConnection();
         String deleteSql =  "delete from horse where name = ?";
         try {
             PreparedStatement psmt = connection.prepareStatement(deleteSql);
