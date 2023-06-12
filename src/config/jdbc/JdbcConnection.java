@@ -10,11 +10,13 @@ public class JdbcConnection {
     private static final String PASSWORD = "1234";
     public static Connection getConnection(){
         Connection conn;
+
         try {
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
         return conn;
     }
 }
