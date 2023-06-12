@@ -1,6 +1,5 @@
 package sql;
 
-
 import config.jdbc.JdbcConnection;
 
 import java.sql.Connection;

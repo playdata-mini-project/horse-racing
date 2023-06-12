@@ -21,7 +21,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class GameController {
-
     private static final int HORSE_USER_TOTAL_NUM = 5;
     private final NumberGenerator numberGenerator;
     private static final String DELIMITER = ",";

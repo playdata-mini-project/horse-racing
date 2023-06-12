@@ -1,6 +1,5 @@
 package domain.entity.horse;
 
-
 import util.generator.NumberGenerator;
 
 public class Horse {
