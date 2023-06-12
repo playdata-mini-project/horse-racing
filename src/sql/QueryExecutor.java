@@ -49,4 +49,3 @@ public class QueryExecutor {
         return i;
     }
 }
-
