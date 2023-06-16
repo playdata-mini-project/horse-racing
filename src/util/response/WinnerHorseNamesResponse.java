@@ -5,16 +5,16 @@ import domain.entity.horse.Horse;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WinningHorseResponse {
+public class WinnerHorseNamesResponse {
     private final List<String> horseNames;
 
-    public WinningHorseResponse(List<Horse> horseNames) {
-        this.horseNames = horseNames.stream()
+    public WinnerHorseNamesResponse(List<Horse> horses) {
+        this.horseNames = horses.stream()
                 .map(Horse::getName)
                 .collect(Collectors.toList());
     }
 
-    public List<String> winningHorseNames() {
+    public List<String> getHorseNames() {
         return horseNames;
     }
 }

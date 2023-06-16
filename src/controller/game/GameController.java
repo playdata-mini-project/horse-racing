@@ -1,4 +1,4 @@
-package controller;
+package controller.game;
 
 import domain.entity.game.Game;
 import domain.entity.game.Lap;
@@ -10,7 +10,7 @@ import domain.entity.user.Users;
 
 import util.generator.NumberGenerator;
 import util.response.FinalPositionResponse;
-import util.response.WinningHorseResponse;
+import util.response.WinnerHorseNamesResponse;
 import util.view.Input;
 import util.view.Output;
 
@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class GameController {
+
+    // 말, 유저 최대 필요 개수
     private static final int HORSE_USER_TOTAL_NUM = 5;
     private final NumberGenerator numberGenerator;
     private static final String DELIMITER = ",";
@@ -60,7 +62,7 @@ public class GameController {
             Output.printPosition(new FinalPositionResponse(game.getHorses()));
         }
         WinningHorses winningHorses = game.winner();
-        Output.printWinningHorsesAndUsers(new WinningHorseResponse(winningHorses.getHorses()), matchMap);
+        Output.printWinningHorsesAndUsers(new WinnerHorseNamesResponse(winningHorses.getHorses()), matchMap);
     }
 
     private void setMatchMap(Horses horses, Users users) {

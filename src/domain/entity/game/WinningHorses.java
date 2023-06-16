@@ -31,4 +31,5 @@ public class WinningHorses {
                 .max(Comparator.comparing(Horse::getPosition))
                 .orElseThrow(IllegalArgumentException::new);
     }
+
 }

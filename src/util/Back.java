@@ -1,6 +1,6 @@
 package util;
 
-import controller.HomeController;
+import controller.home.HomeController;
 
 public class Back {
     public static void back(){
