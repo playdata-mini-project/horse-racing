@@ -24,7 +24,7 @@ public class Game {
     }
 
     public static Game init(NumberGenerator numberGenerator,
-                            Horses horses,
+                            Horses  horses,
                             Users users,
                             Lap targetLap) {
         return new Game(numberGenerator, horses, users, targetLap);
