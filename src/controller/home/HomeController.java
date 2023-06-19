@@ -13,7 +13,7 @@ public class HomeController {
         String mode = HomeViewInput.selectMode();
 
         if (mode.equals("1")) {
-            new UserController();
+            new UserController().userView();
         }
 
         if (mode.equals("2")) {
