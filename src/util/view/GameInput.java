@@ -2,7 +2,7 @@ package util.view;
 
 import java.util.Scanner;
 
-public class Input {
+public class GameInput {
     private static final Scanner sc = new Scanner(System.in);
 
     public static String inputHorseNames() {

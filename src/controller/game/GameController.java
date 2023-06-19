@@ -11,8 +11,8 @@ import domain.entity.user.Users;
 import util.generator.NumberGenerator;
 import util.response.FinalPositionResponse;
 import util.response.WinnerHorseNamesResponse;
-import util.view.Input;
-import util.view.Output;
+import util.view.GameInput;
+import util.view.GameOutput;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -35,23 +35,23 @@ public class GameController {
     public void gameStart() {
         Horses horses = createHorses();
         Users users = createUsers();
-        Lap targetLap = Lap.totalLap(Input.inputTargetLap());
+        Lap targetLap = Lap.totalLap(GameInput.inputTargetLap());
 
         setMatchMap(horses, users);
 
         Game game = Game.init(numberGenerator, horses, users, targetLap);
-        Output.printResultMessage();
+        GameOutput.printResultMessage();
         start(game);
     }
 
     private Horses createHorses() {
-        String horseNames = Input.inputHorseNames();
+        String horseNames = GameInput.inputHorseNames();
 
         return new Horses(Arrays.stream(horseNames.split(DELIMITER)).collect(Collectors.toList()));
     }
 
     private Users createUsers() {
-        String userNames = Input.inputMatchingUserNames();
+        String userNames = GameInput.inputMatchingUserNames();
 
         return new Users(Arrays.stream(userNames.split(DELIMITER)).collect(Collectors.toList()));
     }
@@ -59,10 +59,10 @@ public class GameController {
     private void start(Game game) {
         while (game.hasMoreLap()) {
             game.start();
-            Output.printPosition(new FinalPositionResponse(game.getHorses()));
+            GameOutput.printPosition(new FinalPositionResponse(game.getHorses()));
         }
         WinningHorses winningHorses = game.winner();
-        Output.printWinningHorsesAndUsers(new WinnerHorseNamesResponse(winningHorses.getHorses()), matchMap);
+        GameOutput.printWinningHorsesAndUsers(new WinnerHorseNamesResponse(winningHorses.getHorses()), matchMap);
     }
 
     private void setMatchMap(Horses horses, Users users) {
