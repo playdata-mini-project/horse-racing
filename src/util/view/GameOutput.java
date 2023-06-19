@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Output {
+public class GameOutput {
     private static final String HORSE_POSITION_FORMAT = "%s : %s\n";
     private static final String OUTPUT_FORMAT = "말 %s와 유저 %s 최종 우승했습니다.";
     private static final String DELIMITER = ", ";
