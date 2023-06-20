@@ -1,6 +1,6 @@
 package controller.user;
 
-import service.User.UserService;
+import service.user.UserService;
 import util.Back;
 import util.view.UserViewInput;
 

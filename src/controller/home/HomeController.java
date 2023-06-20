@@ -17,7 +17,7 @@ public class HomeController {
         }
 
         if (mode.equals("2")) {
-            new HorseController();
+            new HorseController().horseView();
         }
 
         if (mode.equals("3")) {

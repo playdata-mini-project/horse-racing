@@ -1,8 +1,7 @@
-package service.User;
+package service.user;
 
 import config.jdbc.JdbcConnection;
 import domain.dto.user.FindAllUser;
-import sql.QueryExecutor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
