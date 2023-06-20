@@ -2,6 +2,8 @@ package util.view;
 
 import domain.entity.horse.Horse;
 import domain.entity.user.User;
+import service.game.gameService;
+import service.user.UserService;
 import util.response.FinalPositionResponse;
 import util.response.WinnerHorseNamesResponse;
 
@@ -25,7 +27,8 @@ public class GameOutput {
                 winningUsers.add(e.getValue().getName());
             }
         }
-
+        new gameService().insertWinner(winningUsers, winnerHorseNames);
+        new UserService().updateUserHitRate(winningUsers);
         winnerHorseNames.sort(String::compareTo);
 
         String horseName = String.join(DELIMITER, winnerHorseNames);

@@ -30,7 +30,7 @@ public class Horse {
         position = nextPosition(number);
     }
 
-    private void validateRange(int randomNum) {
+    public void validateRange(int randomNum) {
         if (randomNum < MIN_RANGE || randomNum > MAX_RANGE) {
             throw new IllegalArgumentException();
         }
