@@ -32,4 +32,24 @@ public class HorseService {
         for (FindAllHorse findAllHorse : findAllHorses)
             System.out.println(findAllHorses);
     }
+    public boolean validationHorseName(List<String> horseNames) {
+
+        String sql = "select name from horse where name = ?";
+        Connection conn = new JdbcConnection().getConnection();
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            for (String name:horseNames) {
+                pst.setString(1,name);
+                ResultSet resultSet = pst.executeQuery();
+                if(!resultSet.next()) {
+                    return false;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
+    }
+
 }
