@@ -16,10 +16,7 @@ public class HorseController {
             new HorseService().findAllHorse();
         }
 
-        if (mode.equals("2")) {
-
-        }
-        if(mode.equals("3")){
+        if(mode.equals("2")){
             Back.back();
         }
 

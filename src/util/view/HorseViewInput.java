@@ -5,11 +5,10 @@ import java.util.Scanner;
 public class HorseViewInput {
     private static final Scanner sc = new Scanner(System.in);
     private static final int MIN = 1;
-    private static final int MAX = 5;
+    private static final int MAX = 2;
 
     public static void menu() {
-        System.out.println("1. 전체 말 조회\t");
-//
+        System.out.println("1. 전체 말 조회\t2. 뒤로가기");
     }
 
     public static String selectMode(){

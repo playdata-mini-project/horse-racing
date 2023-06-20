@@ -20,7 +20,7 @@ public class Horses {
         }
 
         if(!new HorseService().validationHorseName(horseNames)){
-            throw new IllegalArgumentException("등록되지 않은 말입니다.");
+            throw new IllegalArgumentException("등록되지 않은 말이 있습니다.");
             //TODO: throw new IllegalArgumentException
         }
 
