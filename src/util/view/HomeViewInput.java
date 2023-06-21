@@ -15,7 +15,7 @@ public class HomeViewInput {
     public static String selectMode() {
         String mode = sc.nextLine();
         validateMode(mode);
-        return sc.nextLine();
+        return mode;
     }
 
     private static void validateMode(String mode) {

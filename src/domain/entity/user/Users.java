@@ -22,4 +22,10 @@ public class Users {
     public List<User> getUsers() {
         return users;
     }
+
+    public List<String> getUserNames() {
+        return users.stream()
+                .map(User::getName)
+                .collect(Collectors.toList());
+    }
 }

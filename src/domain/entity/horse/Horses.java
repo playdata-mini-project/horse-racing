@@ -24,6 +24,12 @@ public class Horses {
         return horses;
     }
 
+    public List<String> getHorseNames() {
+        return horses.stream()
+                .map(Horse::getName)
+                .collect(Collectors.toList());
+    }
+
     public void run(NumberGenerator numberGenerator) {
         horses.forEach(horse -> horse.run(numberGenerator));
     }
