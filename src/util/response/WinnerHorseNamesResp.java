@@ -5,10 +5,10 @@ import domain.entity.horse.Horse;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WinnerHorseNamesResponse {
+public class WinnerHorseNamesResp {
     private final List<String> horseNames;
 
-    public WinnerHorseNamesResponse(List<Horse> horses) {
+    public WinnerHorseNamesResp(List<Horse> horses) {
         this.horseNames = horses.stream()
                 .map(Horse::getName)
                 .collect(Collectors.toList());

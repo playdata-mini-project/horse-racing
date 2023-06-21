@@ -12,22 +12,25 @@ public class Game {
     private final NumberGenerator numberGenerator;
     private final Horses horses;
     private final Users users;
+    private final Match match;
     private final Lap targetLap;
     private Lap currLap;
 
-    public Game(NumberGenerator numberGenerator, Horses horses, Users users, Lap targetLap) {
+    public Game(NumberGenerator numberGenerator, Horses horses, Users users, Match match, Lap targetLap) {
         this.numberGenerator = numberGenerator;
         this.horses = horses;
         this.users = users;
+        this.match = match;
         this.targetLap = targetLap;
         this.currLap = Lap.init();
     }
 
     public static Game init(NumberGenerator numberGenerator,
-                            Horses  horses,
+                            Horses horses,
                             Users users,
+                            Match match,
                             Lap targetLap) {
-        return new Game(numberGenerator, horses, users, targetLap);
+        return new Game(numberGenerator, horses, users, match, targetLap);
     }
 
     public void start() {
@@ -43,11 +46,12 @@ public class Game {
         return !targetLap.equals(currLap);
     }
 
-    public WinningHorses winner() {
+    public Winners winners() {
         if (hasMoreLap()) {
             throw new IllegalStateException("아직 게임이 종료되지 않았습니다.");
         }
-        return new WinningHorses(horses.getHorses());
+
+        return new Winners(horses, users, match);
     }
 
     public Horses getHorses() {

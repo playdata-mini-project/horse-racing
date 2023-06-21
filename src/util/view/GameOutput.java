@@ -2,8 +2,9 @@ package util.view;
 
 import domain.entity.horse.Horse;
 import domain.entity.user.User;
-import util.response.FinalPositionResponse;
-import util.response.WinnerHorseNamesResponse;
+import util.response.FinalPositionResp;
+import util.response.WinnerHorseNamesResp;
+import util.response.WinningUserNamesResp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,26 +17,20 @@ public class GameOutput {
     private static final String OUTPUT_FORMAT = "말 %s와 유저 %s 최종 우승했습니다.";
     private static final String DELIMITER = ", ";
 
-    public static void printWinningHorsesAndUsers(WinnerHorseNamesResponse horseNames, Map<Horse, User> matchMap) {
-        List<String> winnerHorseNames = horseNames.getHorseNames();
-        List<String> winningUsers =  new ArrayList<>();
-
-        for(Map.Entry<Horse, User> e : matchMap.entrySet()){
-            if (winnerHorseNames.contains(e.getKey().getName())) {
-                winningUsers.add(e.getValue().getName());
-            }
-        }
+    public static void printWinningHorsesAndUsers(WinnerHorseNamesResp horsesResp, WinningUserNamesResp usersResp) {
+        List<String> winnerHorseNames = horsesResp.getHorseNames();
+        List<String> winnerUserNames = usersResp.getUserNames();
 
         winnerHorseNames.sort(String::compareTo);
 
         String horseName = String.join(DELIMITER, winnerHorseNames);
-        String userName = String.join(DELIMITER, winningUsers);
+        String userName = String.join(DELIMITER, winnerUserNames);
         String message = String.format(OUTPUT_FORMAT, horseName, userName);
 
         System.out.println(message);
     }
 
-    public static void printPosition(FinalPositionResponse result) {
+    public static void printPosition(FinalPositionResp result) {
         Map<String, Integer> positionByNameMap = result.positionByHorseNameMap();
 
         String results = positionByNameMap.keySet().stream()
